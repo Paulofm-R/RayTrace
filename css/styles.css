@@ -26,9 +26,9 @@ button {
     border: 1px solid black;
 }
 
-#recursionDepth {
-    width: 50px;
-    padding: 5px;
+input[type="number"] {
+    width: 45px;
+    padding: 4.5px;
 }
 
 .progressBar {
@@ -49,6 +49,33 @@ button {
     display: inline-block;
     vertical-align: middle;
     /* Para alinhar verticalmente no centro se desejar */
+    margin: 10px;
+}
+
+#recursionDepthDiv {
+    text-align: center;
+}
+
+#image,
+#camera {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    vertical-align: top;
+    text-align: right;
+    padding: 5px
+}
+
+#transformation>div {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    text-align: right;
+    padding: 10px
+}
+
+#image>span,
+#transformation>div>span {
     margin: 10px;
 }
 

@@ -26,10 +26,64 @@
                 </button>
                 <button id="saveButton">Save image...</button>
             </div>
-            <div>
+            <div id="recursionDepthDiv">
                 <label for="recursionDepth">Recursion depth</label>
-                <input type="number" id="recursionDepth" value="0">
-
+                <input type="number" id="recursionDepth" value="0" min="0">
+            </div>
+            <div id="changeData">
+                <fieldset id="image">
+                    <legend>Image</legend>
+                        <span>Resolution</span>
+                        <div>
+                            <label for="horImage">Horizontal</label>
+                            <input type="number" name="Horizontal" id="horImage" min="0">
+                        </div>
+                        <div>
+                            <label for="verImage">Vertical</label>
+                            <input type="number" name="Vertical" id="verImage" min="0">
+                        </div>
+                </fieldset>
+                <fieldset  id="camera">
+                    <legend>Camera</legend>
+                        <div>
+                            <label for="distance">Distance</label>
+                            <input type="number" name="Distance" id="distance" min="0">
+                        </div>
+                        <div>
+                            <label for="fieldView">Field of View</label>
+                            <input type="number" name="FieldView" id="fieldView" min="0">
+                        </div>
+                </fieldset>
+                <fieldset id="transformation">
+                    <legend>Transformation</legend>
+                        <div>
+                            <span>Center</span>
+                            <div>
+                                <label for="centerX">X</label>
+                                <input type="number" name="X" id="centerX" min="0">
+                            </div>
+                            <div>
+                                <label for="centerY">Y</label>
+                                <input type="number" name="Y" id="centerY" min="0">
+                            </div>
+                            <div>
+                                <label for="centerZ">Z</label>
+                                <input type="number" name="Z" id="centerZ" min="0">
+                            </div>
+                        </div>
+                        <div>
+                            <span>Orientation</span>
+                            <div>
+                                <label for="horOrientation">Horizontal</label>
+                                <input type="number" name="Horizontal" id="horOrientation" min="0">
+                            </div>
+                            <div>
+                                <label for="verOrientation">Vertical</label>
+                                <input type="number" name="Vertical" id="verOrientation" min="0">
+                            </div>
+                        </div>
+                    </legend>
+                </fieldset>
             </div>
         </div>
     </main>

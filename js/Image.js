@@ -1,3 +1,7 @@
+//imports
+import Vector3 from "./Vector3.js";
+import Ray from "./Ray.js";
+
 export default class Image {
     constructor(gl, W, H, imageInfo) {
         this.gl = gl;
@@ -13,7 +17,8 @@ export default class Image {
     }
 
     create() {
-        this.gl.fillStyle = `rgb(${Math.round(this.red * 255)}, ${Math.round(this.green * 255)}, ${Math.round(this.blue * 255)})`;
+        this.gl.clearColor(this.red, this.green, this.blue, 1);
+        this.gl.clear(this.gl.COLOR_BUFFER_BIT);
 
         this.createVertices(this.horizontal, this.vertical);
 
@@ -23,18 +28,24 @@ export default class Image {
     }
 
     createVertices(horizontal, vertical) {
-        // Preencha o array com vértices da grade
-        for (let x = 0; x < horizontal; x++) {
-            for (let y = 0; y < vertical; y++) {
-                // Crie vértices para cada quadrado de pixel
-                const x0 = (x / horizontal) * 2 - 1;
-                const y0 = 1 - (y / vertical) * 2;
-                const x1 = ((x + 1) / horizontal) * 2 - 1;
-                const y1 = 1 - ((y + 1) / vertical) * 2;
+        const origin = new Vector3(0.0, 0.0, 30.0);
+        const s = this.h / this.vertices.length;
 
-                // Adicione os vértices do quadrado ao array
-                this.vertices.push(x0, y0, x1, y0, x0, y1, x0, y1, x1, y0, x1, y1);
+        for (let i = 0; i < this.vertices.length; i++) {
+            for (let j = 0; j < this.horizontal.length; j++) {
+                const px = (i + 0.5) * s - this.w / 2.0;
+                const py = -(j + 0.5) * s + this.h / 2.0;
+                const pz = 0.0;
+
+                const direction = new Vector3(px, py, - 30.0);
+                direction.normalize();
+                
+                const ray = new Ray(origin, direction);
             }
         }
+    }
+
+    traceRay(ray, rec) {
+        
     }
 }

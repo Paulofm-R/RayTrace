@@ -23,8 +23,6 @@ const H = canvas.height;
 
 
 startButton.addEventListener('click', () => {
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
-    gl.clear(gl.COLOR_BUFFER_BIT);  //limpar o canvas
     const recursionDepth = parseInt(document.querySelector('#recursionDepth').value, 10);
 
     if (!isNaN(recursionDepth)) {
@@ -57,7 +55,7 @@ const createScene = (object) => {
             if (transInfo) {
                 const transformation = new Transformation(gl, W, H);
                 transformation.saveInfo(transInfo[1]);
-                transformation.create();
+                // transformation.create();
             }
         }
         else if (obj.includes("Material"))
