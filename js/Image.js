@@ -2,6 +2,7 @@
 import Vector3 from "./Vector3.js";
 import Ray from "./Ray.js";
 import Color3 from "./Color3.js";
+import Hit from "./Hit.js";
 
 export default class Image {
     constructor(gl, W, H, imageInfo) {
@@ -50,7 +51,7 @@ export default class Image {
     }
 
     traceRay(ray, rec) {
-        hit = new Hit();
+        let hit = new Hit();
 
         hit.found = false; // inicialização; também pode ser realizada no construtor da classe Hit
         hit.tmin = 1.0 * 10 ** 12; // usem um valor muito elevado. Por exemplo, hit.tmin = 1.0E12;
