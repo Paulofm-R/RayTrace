@@ -14,7 +14,6 @@ const canvas = document.querySelector("#canvas");
 let objectScene;
 const regexInfo = /\{ ([^}]*)\ }/; // ajuda a buscar as informações que estão entre {}
 const gl = canvas.getContext("webgl");
-//const ctx = canvas.getContext("2d");
 
 canvas.width = 295; // 295px
 canvas.height = 265; // 265px
@@ -36,9 +35,17 @@ startButton.addEventListener('click', () => {
 loadButton.addEventListener('click', () => fileInput.click())
 
 saveButton.addEventListener("click", () => {
+    const vctx = canvas.getContext('2d'); // para guardar a imagem
+
+    //    vctx.drawImage(canvas, 0, 0); 
+
+    // const vctx = videocanvas.getContext('2d');
+    // vctx.drawImage(webGLTestCanvas, 0, 0);
+    // const capturedImage = videocanvas.toDataURL();
+
     const a = document.createElement('a');
     a.download = "rayTracer.png";
-    a.href = canvas.toDataURL();
+    a.href = canvas.toDataURL("image/png");
     a.click();
 })
 

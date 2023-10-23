@@ -23,10 +23,7 @@ export default class Image {
 
     create() {
         this.createVertices(this.horizontal, this.vertical);
-
-        const color = this.traceRay(this.ray, 0);
-
-        console.log(color);
+        
         this.gl.clearColor(this.red, this.green, this.blue, 1);
         this.gl.clear(this.gl.COLOR_BUFFER_BIT);
 
