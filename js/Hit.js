@@ -1,10 +1,10 @@
 export default class Hit{
-    constructor(found, material, point, normal, t, tmin) {
-        this.found = found;
+    constructor(material, point, normal, t) {
+        this.found = false;
         this.material = material;
         this.point = point;
         this.normal = normal;
         this.t = t;
-        this.tmin = tmin;
+        this.tmin = 1.0 * 10 ** 12;
     }
 }

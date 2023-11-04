@@ -1,11 +1,14 @@
 export default class Vector3{
-    constructor(x, y, distance){
+    constructor(x, y, z){
         this.x = x;
         this.y = y;
-        this.distance = distance;
+        this.z = z;
     }
 
     normalize() {
-        //codigo
+        const length = Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+        this.x /= length;
+        this.y /= length;
+        this.z /= length;
     }
 }

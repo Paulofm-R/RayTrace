@@ -1,6 +1,6 @@
-export default class Vector3{
-    constructor(origin, direction){
-        this.origin = origin;
-        this.direction = direction;
+export default class Ray {
+    constructor(origin, direction) {
+      this.origin = origin;
+      this.direction = direction;
     }
-}
+  }

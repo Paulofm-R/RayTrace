@@ -1,6 +1,9 @@
 //imports
 import Image from "./Image.js";
 import Transformation from "./Transformation.js";
+import Camera from "./Camera.js";
+import Vector3 from "./Vector3.js";
+
 
 // declarações DOM
 const startButton = document.querySelector('#startButton');
@@ -15,6 +18,9 @@ let objectScene;
 const regexInfo = /\{ ([^}]*)\ }/; // ajuda a buscar as informações que estão entre {}
 const gl = canvas.getContext("webgl", {preserveDrawingBuffer: true});
 
+let image;
+let camera;
+
 canvas.width = 295; // 295px
 canvas.height = 265; // 265px
 const W = canvas.width;
@@ -26,7 +32,8 @@ startButton.addEventListener('click', () => {
 
     if (!isNaN(recursionDepth)) {
         // progress.setAttribute("style", "width: 60%");
-        createScene(objectScene);
+        saveInformation(objectScene);
+        createScene();
     }
     else
         alert('O Recursion depth não é um número valido.');
@@ -42,12 +49,15 @@ saveButton.addEventListener("click", () => {
 })
 
 
-const createScene = (object) => {
+const saveInformation = (object) => {
     for (const obj of object) {
-        if (obj.includes("Image")) {
+        if (obj.includes("Camera")) {
+            const cameraInfo = obj.replace(/\s+/g, ' ').match(regexInfo);
+            camera = new Camera(cameraInfo[1].split(' '))
+        }
+        else if (obj.includes("Image")) {
             const imageInfo = obj.replace(/\s+/g, ' ').match(regexInfo);
-            const image = new Image(gl, W, H, imageInfo[1].split(' '))
-            image.create();
+            image = new Image(imageInfo[1].split(' '))
         }
         else if (obj.includes("Transformation")) {
             const transInfo = obj.replace(/\s+/g, ' ').match(regexInfo);
@@ -59,8 +69,6 @@ const createScene = (object) => {
         }
         else if (obj.includes("Material"))
             console.log("Material");
-        else if (obj.includes("Camera"))
-            console.log("Camara");
         else if (obj.includes("Light"))
             console.log("Luz");
         else if (obj.includes("Triangles"))
@@ -70,6 +78,12 @@ const createScene = (object) => {
         else if (obj.includes("Sphere"))
             console.log("Esfera");
     }
+
+    // chamar todas as funções para criar o raytracing no canvas
+}
+
+const createScene = () => {
+    const origin = new Vector3(0.0, 0.0, camera.distance);
 }
 
 window.addEventListener("DOMContentLoaded", () => {
