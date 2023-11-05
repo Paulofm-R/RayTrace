@@ -8,6 +8,7 @@ export class Ray {
     // Trace this ray through the specified scene, and return the resulting color
     trace = (scene) => {
         let distances = scene.shapes.map( s => s.closestDistanceAlongRay(this));
+        // console.log(distances);
         let shortestDistance = Math.min.apply(Math, distances);
         if (shortestDistance == Infinity) return scene.background;
         let nearestShape = scene.shapes[distances.indexOf(shortestDistance)];
