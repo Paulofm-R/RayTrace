@@ -1,7 +1,7 @@
 //imports
 import Image from "./Image.js";
 import Transformation from "./Transformation.js";
-import Camera from "./Camera.js";
+import Camera from "../3D/js/Camera.js";
 import Vector3 from "./Vector3.js";
 
 

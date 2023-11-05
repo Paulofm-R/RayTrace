@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray Tracer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <main>
+        <div id="boxCanvas">
+            <canvas id="canvas">
+                Your browser does not support HTML5 Canvas.
+            </canvas>
+            <div class="progressBar">
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <div id="scene">
+                <button id="startButton">Start</button>
+                <button id="loadButton">
+                    <span>Load...</span>
+                    <input id="fileInput" type="file" accept=".txt,.json" value="Load..." />
+                </button>
+                <button id="saveButton">Save image...</button>
+            </div>
+            <div id="recursionDepthDiv">
+                <label for="recursionDepth">Recursion depth</label>
+                <input type="number" id="recursionDepth" value="0" min="0">
+            </div>
+            <div id="changeData">
+                <fieldset id="image">
+                    <legend>Image</legend>
+                    <div>
+                        <span>Resolution</span>
+                        <div>
+                            <label for="horImage">Horizontal</label>
+                            <input type="number" name="Horizontal" id="horImage" min="0">
+                        </div>
+                        <div>
+                            <label for="verImage">Vertical</label>
+                            <input type="number" name="Vertical" id="verImage" min="0">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset id="camera">
+                    <legend>Camera</legend>
+                    <div>
+                        <div>
+                            <label for="distance">Distance</label>
+                            <input type="number" name="Distance" id="distance" min="0">
+                        </div>
+                        <div>
+                            <label for="fieldView">Field of View</label>
+                            <input type="number" name="FieldView" id="fieldView" min="0">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset id="transformation">
+                    <legend>Transformation</legend>
+                    <div>
+                        <span>Center</span>
+                        <div>
+                            <label for="centerX">X</label>
+                            <input type="number" name="X" id="centerX" min="0">
+                        </div>
+                        <div>
+                            <label for="centerY">Y</label>
+                            <input type="number" name="Y" id="centerY" min="0">
+                        </div>
+                        <div>
+                            <label for="centerZ">Z</label>
+                            <input type="number" name="Z" id="centerZ" min="0">
+                        </div>
+                    </div>
+                    <div>
+                        <span>Orientation</span>
+                        <div>
+                            <label for="horOrientation">Horizontal</label>
+                            <input type="number" name="Horizontal" id="horOrientation" min="0">
+                        </div>
+                        <div>
+                            <label for="verOrientation">Vertical</label>
+                            <input type="number" name="Vertical" id="verOrientation" min="0">
+                        </div>
+                    </div>
+                    </legend>
+                </fieldset>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
