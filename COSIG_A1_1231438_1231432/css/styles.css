@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 350px;
+    height: 400px;
+    margin: auto;
+    margin-top: 10vh;
+}
+
+#canvas {
+    border: 1px solid grey;
+    margin: 5%;
+}
+
+button {
+    width: 100px;
+    height: 45px;
+}
+
+#boxCanvas {
+    width: 95%;
+    height: 300px;
+    border: 1px solid black;
+}
+
+input[type="number"] {
+    width: 45px;
+    padding: 4.5px;
+}
+
+.progressBar {
+    width: 300px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #ccc;
+    display: none;
+}
+
+.progressBar>Div {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #222;
+}
+
+#scene {
+    display: inline-block;
+    vertical-align: middle;
+    /* Para alinhar verticalmente no centro se desejar */
+    margin: 10px;
+}
+
+#recursionDepthDiv {
+    text-align: center;
+}
+
+#image,
+#camera {
+    display: inline-block;
+    width: 45%;
+    height: 100px;
+    vertical-align: top;
+    padding: 5px
+}
+
+#image>div,
+#camera>div {
+    text-align: right;
+}
+
+#transformation>div {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    text-align: right;
+    padding: 10px
+}
+
+#image>span,
+#transformation>div>span {
+    margin: 10px;
+}
+
+#fileInput {
+    display: none;
+}
