@@ -13,7 +13,6 @@ export class Renderer {
     }
 
     trace(objects, pixels) {
-        console.log('oi');
         for (let i = 0; i < this.width; i++) {
             for (let j = 0; j < this.height; j++) {
                 let x = i - this.width / 2
